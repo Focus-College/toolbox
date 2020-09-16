@@ -15,15 +15,22 @@
     "build:fix": "npm run build:lint:fix && npm run build:prettier:fix && npm run build:compile",
     "build:lint:fix": "npx eslint src/**/*.ts --ext .ts --fix",
     "build:prettier:fix": "npx prettier --write src/**/*.ts",
-    "build:compile": "tsc"
+    "build:compile": "tsc",
+    
+    "prestart:notest": "npm run build:compile",
+    "start:notest": "node dist/index.js"
   },
   "author": "Bradley Holbrook",
   "license": "ISC",
   "devDependencies": {
+    "@types/yargs": "^15.0.5",
     "@typescript-eslint/eslint-plugin": "^4.1.1",
     "@typescript-eslint/parser": "^4.1.1",
     "eslint": "^7.9.0",
     "prettier": "2.1.1",
     "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "yargs": "^16.0.3"
   }
 }
