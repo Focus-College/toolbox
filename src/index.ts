@@ -6,6 +6,6 @@ if( condition ){
 
 } else {
 
-    console.log("Goodbye World");
+    console.log("Goodbye Cruel World");
 
 }
