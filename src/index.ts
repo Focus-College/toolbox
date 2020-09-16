@@ -1,5 +1,7 @@
 import yargs = require('yargs');
-import { displayCandidateName } from './function';
+import { displayCandidateName, denyPersonFromVoting } from './function';
+import { applyVotingRules } from './function-vote';
+import { findCandidateAndMakeSpeech } from './object-candidate';
 
 yargs.command(
 
@@ -25,7 +27,10 @@ yargs.command(
 
     function( args ){
         
-        displayCandidateName( args.candidate );
+        // applyVotingRules( args.candidate, args.over18, displayCandidateName, denyPersonFromVoting );
+
+        const winner = findCandidateAndMakeSpeech( args.candidate );
+        winner.victorySpeech();
 
     }
 
